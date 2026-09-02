@@ -87,7 +87,15 @@ body{background:#000;font-family:'EB Garamond',Georgia,serif;overflow:hidden;dis
 @keyframes kb{to{transform:scale(1.14)}}
 
 /* FINALE */
-#finale{z-index:6;opacity:0;transition:opacity .9s ease;background:radial-gradient(120% 100% at 50% 42%,#12100d,#050404);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vw}
+#finale{
+  z-index:6;
+  opacity:0;
+  transition:opacity .9s ease;
+  background:radial-gradient(120% 100% at 50% 42%,#12100d,#050404);
+  display:flex;flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:0 20px;}
 #finale.on{opacity:1}
 .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,2vw,14px);width:100%;max-width:420px;margin-bottom:6vh}
 .fsh{opacity:0;transform:scale(.7) translateY(10px)}
