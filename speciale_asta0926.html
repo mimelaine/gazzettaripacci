@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gazzettaripacci · Speciale Asta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4ddd0;--paper2:#efd2c2;--ink:#1c1410;--ink2:#4a3b31;--mut:#7a675a;--ox:#8e1b1b;--gold:#a9822d;--line:#c7a693}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#2a211c;font-family:'Spectral',Georgia,serif;color:var(--ink);padding:20px;display:flex;justify-content:center}
+.paper{width:100%;max-width:900px;background:
+  linear-gradient(0deg,rgba(140,90,60,.05),rgba(140,90,60,.05)),
+  radial-gradient(120% 80% at 50% 0%,#f7e4d9,var(--paper) 60%,var(--paper2));
+  padding:22px 26px 0;box-shadow:0 10px 50px rgba(0,0,0,.5);position:relative}
+.paper::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(90,50,30,.015) 3px,rgba(90,50,30,.015) 4px)}
+
+/* MASTHEAD */
+.topbar{display:flex;justify-content:space-between;align-items:center;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--ink)}
+.topbar b{color:var(--ox)}
+.mast{width:100%;margin:8px 0 3px}
+.mast svg{width:100%;height:auto;display:block}
+.submast{display:flex;justify-content:space-between;align-items:center;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:5px 0;margin-bottom:14px}
+.submast .c{color:var(--gold);font-weight:600}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 2.1fr 1.15fr;gap:0}
+.col{padding:0 14px}
+.col.left{border-right:1px solid var(--line);padding-left:0}
+.col.right{border-left:1px solid var(--line);padding-right:0}
+
+/* SIDE PIECES */
+.eyebrow{font-family:'Oswald',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ox);margin-bottom:3px}
+.sidepiece{padding:12px 0;border-bottom:1px solid var(--line)}
+.sidepiece:first-child{padding-top:0}
+.sidepiece h3{font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;line-height:1.02;text-transform:uppercase;margin-bottom:7px}
+.sidepiece p{font-size:13px;line-height:1.42;color:var(--ink2);text-align:justify;hyphens:auto}
+.mug{float:left;width:58px;height:58px;border-radius:2px;object-fit:cover;margin:2px 9px 4px 0;border:1.5px solid var(--ink);filter:grayscale(.15) contrast(1.05);box-shadow:2px 2px 0 rgba(28,20,16,.15)}
+.credit{font-family:'Oswald',sans-serif;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);clear:both}
+
+/* CENTER */
+.lead-eyebrow{font-family:'Oswald',sans-serif;font-weight:700;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ox);text-align:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:5px 0;margin-bottom:8px}
+.headline{font-family:'Anton',sans-serif;font-size:clamp(30px,5.4vw,52px);line-height:.94;text-transform:uppercase;text-align:center;letter-spacing:.005em}
+.summary{font-family:'Spectral',serif;font-style:italic;font-size:15px;line-height:1.4;text-align:center;color:var(--ink2);margin:10px 4px 12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.cover{width:100%;background:linear-gradient(180deg,#efd0c0,#e9c6b3);border:1px solid var(--ink);border-radius:2px;overflow:hidden}
+.cover svg{display:block;width:100%;height:auto}
+.caption{font-family:'Oswald',sans-serif;font-size:11px;line-height:1.35;color:var(--ink2);padding:7px 2px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.caption b{color:var(--ox);text-transform:uppercase;letter-spacing:.04em}
+.article{column-count:2;column-gap:18px;font-size:13.5px;line-height:1.5;text-align:justify;hyphens:auto;color:var(--ink)}
+.article p{margin-bottom:8px}
+.article .drop::first-letter{font-family:'Anton',sans-serif;font-size:46px;float:left;line-height:.72;padding:4px 6px 0 0;color:var(--ox)}
+
+/* RIGHT BOXES */
+.box{border:1.5px solid var(--ink);border-radius:2px;margin-bottom:14px;background:rgba(255,255,255,.14)}
+.box h4{font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-align:center;background:var(--ink);color:var(--paper);padding:5px}
+.box.flop h4{background:var(--ox)}
+.row{display:flex;gap:8px;padding:8px 10px;border-bottom:1px dashed var(--line);font-size:12.5px;line-height:1.3}
+.row:last-child{border-bottom:0}
+.row .nm{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:12px;white-space:nowrap}
+.row .ds{color:var(--ink2)}
+.res{padding:4px 0}
+.match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px;padding:7px 8px;border-bottom:1px dashed var(--line);font-size:12px}
+.match:last-child{border-bottom:0}
+.match .t{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:11.5px}
+.match .t.a{text-align:right}
+.match .mg{font-family:'Oswald',sans-serif;font-size:9px;color:var(--mut);display:block;text-transform:none;letter-spacing:.02em}
+.match .sc{font-family:'Anton',sans-serif;font-size:16px;background:var(--ink);color:var(--paper);padding:2px 7px;border-radius:2px;white-space:nowrap}
+.stand{padding:2px 0}
+.strow{display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:8px;padding:5px 10px;border-bottom:1px dashed var(--line)}
+.strow:last-child{border-bottom:0}
+.strow.lead{background:rgba(169,130,45,.14)}
+.strow .ps{font-family:'Anton',sans-serif;font-size:13px;color:var(--mut);text-align:right}
+.strow .tn2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:11.5px}
+.strow .pt{font-family:'Anton',sans-serif;font-size:13px;background:var(--ink);color:var(--paper);padding:1px 7px;border-radius:2px;min-width:24px;text-align:center}
+
+/* PAGELLE */
+.pagelle{margin:8px 0 0;border-top:3px double var(--ink);padding-top:12px}
+.pagelle .ph{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase;text-align:center;letter-spacing:.03em;margin-bottom:2px}
+.pagelle .psub{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);text-align:center;margin-bottom:12px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{border:1px solid var(--line);border-top:4px solid var(--chip,#888);border-radius:2px;padding:9px 10px;background:rgba(255,255,255,.12)}
+.card .hn{font-family:'Cinzel',serif;font-weight:700;font-size:10px;letter-spacing:.08em;color:var(--mut);text-transform:uppercase}
+.card .tn{font-family:'Oswald',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline;margin:1px 0 4px}
+.card .vt{font-family:'Anton',sans-serif;font-size:20px;color:var(--ox)}
+.card p{font-size:11px;line-height:1.32;color:var(--ink2)}
+
+/* FOOTER */
+.footer{margin-top:14px;border-top:1px solid var(--ink);border-bottom:8px solid var(--ink);text-align:center;font-family:'Cinzel',serif;font-weight:700;font-size:clamp(12px,2.4vw,17px);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:12px 0}
+.footer span{color:var(--gold)}
+
+@media(max-width:720px){
+ body{padding:8px}
+ .paper{padding:14px 13px 0}
+ .topbar{font-size:9.5px;letter-spacing:.05em}
+ .submast{font-size:10px;letter-spacing:.08em;flex-wrap:wrap;gap:2px 10px;justify-content:center;text-align:center}
+ .grid{grid-template-columns:1fr}
+ .col{padding:0}
+ .col.center{order:1}
+ .col.right{order:2;border:0;border-top:2px solid var(--ink);padding-top:12px;margin-top:14px}
+ .col.left{order:3;border:0;border-top:2px solid var(--ink);padding-top:12px;margin-top:14px}
+ .lead-eyebrow{font-size:11px}
+ .headline{font-size:clamp(30px,8.6vw,46px)}
+ .summary{font-size:15.5px}
+ .cover{max-width:340px;margin:0 auto}
+ .article{column-count:1;font-size:15.5px;line-height:1.58}
+ .article .drop::first-letter{font-size:52px}
+ .sidepiece h3{font-size:22px}
+ .sidepiece p{font-size:14.5px;line-height:1.5}
+ .mug{width:66px;height:66px}
+ .box h4{font-size:14px}
+ .row{flex-direction:column;gap:2px;font-size:14px}
+ .row .nm{white-space:normal}
+ .match{font-size:13.5px}
+ .match .sc{font-size:18px}
+ .strow{padding:7px 10px}
+ .strow .ps{font-size:15px}
+ .strow .tn2{font-size:13.5px}
+ .strow .pt{font-size:15px}
+ .pagelle .ph{font-size:24px}
+ .pgrid{grid-template-columns:1fr 1fr;gap:9px}
+ .card .tn{font-size:15px}
+ .card p{font-size:12px}
+}
+@media(max-width:400px){ .pgrid{grid-template-columns:1fr} }
+</style></head>
+<body>
+<div class="paper">
+  <div class="topbar"><div>Anno I · N. <b>3</b></div><div>Il quotidiano della Lega</div><div>€ 0,00 · <b>si paga a rilanci di 1</b></div></div>
+  <div class="mast"><svg viewBox="0 0 104 18" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><text x="52" y="13" text-anchor="middle" textLength="92" lengthAdjust="spacingAndGlyphs" font-family="Anton,sans-serif" style="font-size:11px" fill="#1c1410"><tspan fill="#1c1410">GAZZETTA</tspan><tspan fill="#8e1b1b">RIPACCI</tspan></text></svg></div>
+  <div class="submast"><div>Edizione Speciale · <span class="c">L'Asta</span></div><div>Stagione 2026/27</div><div>Legaripacci · <span class="c">Mantra</span></div></div>
+
+  <div class="grid">
+    <!-- LEFT -->
+    <div class="col left">
+      <div class="sidepiece">
+        <div class="eyebrow">Il rilancio</div>
+        <h3>Bonumusai tira i prezzi «pure a Maria Vergine»</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FC Bonumusai">
+          <rect width="60" height="60" fill="#6e5416"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#c3b2a4"/>
+          <circle cx="30" cy="23" r="12.5" fill="#cdbcae"/>
+          <path d="M18 18 q12-10 24 0 l-2 6 q-10-6-20 0Z" fill="#2a2a22"/>
+          <path d="M20 12 l3 5 4-5 3 5 4-5 3 5 v3 q-10-4-20 0Z" fill="#caa24a"/>
+          <circle cx="25" cy="24" r="1.7" fill="#1c1410"/><circle cx="35" cy="24" r="1.7" fill="#1c1410"/>
+          <path d="M25 31 q5 2 10 0" fill="none" stroke="#7a5c4a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p>Asta superaggressiva: pochi acquisti roboanti, ma il prezzo tirato su tutti — «pure a Maria Vergine». Puntella la porta con Perri, si prende il centrocampo della Juve (Sarr e Luiz) e, soprattutto, Mora a 351: uno dei migliori prospetti della Serie A. Poi la scommessa Nico Gonzalez a 11: o torna a brillare, o finisce nell'immondizia degli scarti di gennaio. Il suo verdetto: «Mi sono sentito un pivello davanti ai rialzi del Freddo sul secondo portiere della Juve, solo perché "lo aveva scritto sul foglio"». E un benvenuto al debuttante San Isidro.</p>
+        <div class="credit">FC Bonumusai · Casa Baratheon · Milano</div>
+      </div>
+      <div class="sidepiece">
+        <div class="eyebrow">La polemica</div>
+        <h3>Il Barone piange, polemizza e colpisce</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Il Barone">
+          <rect width="60" height="60" fill="#1f4d2e"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#c3b2a4"/>
+          <circle cx="30" cy="24" r="12.5" fill="#cdbcae"/>
+          <path d="M18 16 l3 6 4-6 5 6 5-6 4 6 3-6 v6 q-12-5-24 0Z" fill="#a9822d"/>
+          <circle cx="25" cy="25" r="1.7" fill="#1c1410"/><circle cx="35" cy="25" r="1.7" fill="#1c1410"/>
+          <path d="M24 32 q6 2 12 0" fill="none" stroke="#7a5c4a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M22 29 q3-2 6 0M32 29 q3-2 6 0" fill="none" stroke="#2a1d12" stroke-width="1.1"/>
+        </svg>
+        <p>Si presenta con pochi soldi ma con una missione: far soffrire tutti. Esordisce con l'ennesima polemica sterile sulle chiamate «a regolamento» e finisce a piangere pure il suo panettiere sulla lievitazione dei filoni. Poi, da vecchia volpe, sistema l'unico reparto in difficoltà — l'attacco — con Woltemade e Akor Adams, aggiunge la scommessa Chukwueze e nulla più. D'altronde gli bastava poco per essere il primo, vero contendente al trono del Profeta. Sentenza: «C'è chi ha acquistato giocatori seri, e c'è chi, come me, ha acquistato solo false speranze!»</p>
+        <div class="credit">Il Barone · Casa Tyrell · Viale Calabria</div>
+      </div>
+      <div class="sidepiece">
+        <div class="eyebrow">L'all-in</div>
+        <h3>Il Freddo va all-in e raccatta le briciole</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Il Freddo">
+          <rect width="60" height="60" fill="#35586e"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#bfaea0"/>
+          <circle cx="30" cy="23" r="12.5" fill="#ccd7de"/>
+          <path d="M18 17 q12-9 24 0 l-2 6 q-10-6-20 0Z" fill="#22303f"/>
+          <g stroke="#dff0f7" stroke-width="1" opacity=".8"><path d="M48 10 v10 M43 15 h10 M45 11 l6 8 M45 19 l6-8"/></g>
+          <circle cx="25" cy="24" r="1.7" fill="#1c1410"/><circle cx="35" cy="24" r="1.7" fill="#1c1410"/>
+          <path d="M25 31 q5 1.5 10 0" fill="none" stroke="#5a6a72" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p>Asta aggressiva fino all'osso: brucia tutto il budget su tre uomini — Chalobah, Molina e Kolo Muani — per sistemare difesa e attacco. Poi elemosina gli ultimi slot senza nemmeno completarli, ma raccoglie ottimi affari: Piccoli, Colpani, Couto. La fotografia se la scatta da solo: «San Isidro e Bonumusai hanno padroneggiato la contesa, con vasti capitali e colpi da maestro. Mi auguro di aver scelto con cura le briciole rimaste».</p>
+        <div class="credit">Il Freddo · Casa Estranei · Monza</div>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="col center">
+      <div class="lead-eyebrow">Il mercato · l'asta è servita</div>
+      <div class="headline">Piovono<br>milioni<br>sul regno</div>
+      <div class="summary">Ramos vola a 452, lo sceicco San Isidro sbarca con le casse piene, il Freddo va all-in e Bonumusai tira i prezzi «pure a Maria Vergine». In cima resta l'intoccabile Profeta, che poteva pure non presentarsi. Cronaca di un'asta folle, tra colpi da maestro e polemiche da forno.</div>
+      <div class="cover">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#1c1410" stroke-width="0.6" opacity="0.35"><line x1="100" y1="6" x2="100" y2="-14"/><line x1="139" y1="18" x2="152" y2="0"/><line x1="168" y1="47" x2="188" y2="34"/><line x1="180" y1="86" x2="202" y2="86"/><line x1="61" y1="18" x2="48" y2="0"/><line x1="32" y1="47" x2="12" y2="34"/><line x1="20" y1="86" x2="-2" y2="86"/></g>
+          <circle cx="100" cy="90" r="74" fill="#efd0c0"/>
+          <!-- sound block -->
+          <g stroke="#1c1410" stroke-width="1.6" stroke-linejoin="round">
+            <path d="M58 150 L142 150 L152 170 L48 170 Z" fill="#b98a3e"/>
+            <rect x="80" y="138" width="40" height="14" rx="2" fill="#caa24a"/>
+          </g>
+          <!-- gavel -->
+          <g transform="rotate(-22 108 92)" stroke="#1c1410" stroke-linejoin="round">
+            <rect x="102" y="44" width="12" height="80" rx="6" fill="#7a5a2f" stroke-width="1.6"/>
+            <rect x="82" y="26" width="52" height="30" rx="7" fill="#caa24a" stroke-width="1.8"/>
+            <rect x="82" y="26" width="11" height="30" rx="2" fill="#a9822d" stroke-width="1.2"/>
+            <rect x="123" y="26" width="11" height="30" rx="2" fill="#a9822d" stroke-width="1.2"/>
+          </g>
+          <!-- impact -->
+          <g stroke="#8e1b1b" stroke-width="2.2" stroke-linecap="round"><line x1="72" y1="122" x2="60" y2="112"/><line x1="80" y1="118" x2="73" y2="104"/><line x1="66" y1="130" x2="52" y2="126"/></g>
+          <!-- coins -->
+          <g font-family="Cinzel,serif" font-weight="700">
+            <g><circle cx="150" cy="72" r="13" fill="#d9b24a" stroke="#7a5c1f" stroke-width="1.6"/><text x="150" y="76" text-anchor="middle" font-size="8" fill="#6b4a12">FM</text></g>
+            <g><circle cx="44" cy="66" r="10" fill="#d9b24a" stroke="#7a5c1f" stroke-width="1.4"/><text x="44" y="69.5" text-anchor="middle" font-size="6.5" fill="#6b4a12">FM</text></g>
+            <g><circle cx="164" cy="112" r="9" fill="#d9b24a" stroke="#7a5c1f" stroke-width="1.4"/><text x="164" y="115" text-anchor="middle" font-size="6" fill="#6b4a12">FM</text></g>
+            <g><circle cx="34" cy="100" r="8" fill="#d9b24a" stroke="#7a5c1f" stroke-width="1.3"/></g>
+            <g><circle cx="158" cy="44" r="7" fill="#d9b24a" stroke="#7a5c1f" stroke-width="1.2"/></g>
+          </g>
+        </svg>
+      </div>
+      <div class="caption"><b>Il martello è caduto</b> — e con lui una pioggia di milioni. Rilanci «di 1 in 1» fino allo sfinimento. <span class="credit">Illustrazione originale · Gazzettaripacci</span></div>
+      <div class="article">
+        <p class="drop">L'asta è finita e il regno conta i danni: fiumi di milioni, rilanci «di 1 in 1» fino allo sfinimento e un debuttante che si prende la scena. San Isidro sbarca in Legaripacci come uno sceicco a fare shopping in via Condotti, e osserva gli avversari come un astemio capitato per sbaglio a una sagra del vino. Casse piene, colpo Ramos — il più caro di tutti, 452 — poi Cissè, Mastantuono e l'orgoglio Lulli a 40, «il nuovo Cafù» che l'altro ieri non conosceva nemmeno di nome.</p>
+        <p>«Asta funambolica, con sprazzi di genio e momenti di noia mortale — mette a verbale il presidente —. La mia pazienza, dopo l'ennesimo rilancio di 1 in 1, si è suicidata.» In cima, però, non si è mosso nessuno: il Profeta poteva pure non presentarsi e avrebbe avuto lo stesso la rosa più forte del campionato. Sfrattato in macchina dalla famiglia, si è comunque preso gli esterni destri dell'Inter — 300 milioni per Diouf e Spence, con Dimarco a sinistra — e ha allungato una panchina già lunghissima.</p>
+        <p>«È mancato il grande colpo, quello alla Woltemade per intenderci — ammette il campione —, ma io sono contento dei miei ragazzi: il campo dirà.» E il campo dovrà dire parecchio, perché tra sceicchi, all-in e polemiche da forno qui si è invecchiati di colpo. Ora tocca al prato separare i colpi da maestro dalle false speranze.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col right">
+      <div class="box">
+        <h4>Acquisti Top</h4>
+        <div class="row"><span class="nm">Ramos</span><span class="ds">San Isidro — 452 mln</span></div>
+        <div class="row"><span class="nm">Kolo Muani</span><span class="ds">Il Freddo — 400 mln</span></div>
+        <div class="row"><span class="nm">Mora</span><span class="ds">Bonumusai — 351 mln</span></div>
+      </div>
+      <div class="box">
+        <h4>Affari Low Cost</h4>
+        <div class="row"><span class="nm">S. Esposito</span><span class="ds">Manculicani — 15 mln</span></div>
+        <div class="row"><span class="nm">Ghedjemis</span><span class="ds">Il Puma — 9 mln</span></div>
+        <div class="row"><span class="nm">Piccoli</span><span class="ds">Il Freddo — 17 mln</span></div>
+      </div>
+      <div class="box flop">
+        <h4>Affari Rischiosi</h4>
+        <div class="row"><span class="nm">Kessie</span><span class="ds">Il Biondo — 100 mln</span></div>
+        <div class="row"><span class="nm">Molina</span><span class="ds">Il Freddo — 200 mln</span></div>
+        <div class="row"><span class="nm">Milla</span><span class="ds">Il Puma — 176 mln</span></div>
+      </div>
+
+      <div class="sidepiece">
+        <div class="eyebrow">L'attendista</div>
+        <h3>Manculicani aspetta, aspetta… e tappa i buchi</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Manculicani">
+          <rect width="60" height="60" fill="#4a4a52"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#c3b2a4"/>
+          <circle cx="30" cy="23" r="12.5" fill="#cdbcae"/>
+          <path d="M18 18 q12-10 24 0 l-2 6 q-10-6-20 0Z" fill="#33333a"/>
+          <path d="M12 40 l4 3 4-3 4 3 4-3 4 3 4-3 4 3 4-3 v-4 l-4 3-4-3-4 3-4-3-4 3-4-3-4 3-4-3Z" fill="#8f8f98"/>
+          <circle cx="25" cy="24" r="1.7" fill="#1c1410"/><circle cx="35" cy="24" r="1.7" fill="#1c1410"/>
+          <path d="M25 31 q5 3 10 0" fill="none" stroke="#7a5c4a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p>Prima si lamenta della mezz'ora di ritardo sull'inizio dell'asta, poi ne aspetta un'altra prima del primo rilancio. Sceglie l'attendismo: solo il futuro dirà se mossa da campione o da pigro. Tappa ogni buco con uomini funzionali e pochi investimenti di peso, tra cui spiccano Stones e Goncalves; grandi speranze su Seba Esposito pagato due spicci e sul mercato di gennaio, dove si presenterà da chip leader. Verdetto: «Presi tutti i giocatori che seguivamo, peccato per due pedine andate via a prezzi fuori mercato. Speriamo di avere ragione».</p>
+        <div class="credit">Manculicani · Casa Stark · Torino</div>
+      </div>
+      <div class="sidepiece">
+        <div class="eyebrow">L'anomalia</div>
+        <h3>Il Puma a mani vuote: record al contrario</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Il Puma">
+          <rect width="60" height="60" fill="#b5541a"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#c3b2a4"/>
+          <circle cx="30" cy="23" r="12.5" fill="#cdbcae"/>
+          <path d="M18 18 q12-10 24 0 l-2 6 q-10-6-20 0Z" fill="#3a2412"/>
+          <g stroke="#f0d9c0" stroke-width="1.4" stroke-linecap="round" opacity=".85"><path d="M40 7 l6 13M44 6 l6 13M48 6 l5 13"/></g>
+          <circle cx="25" cy="24" r="1.7" fill="#1c1410"/><circle cx="35" cy="24" r="1.7" fill="#1c1410"/>
+          <path d="M25 31 q5 2 10 0" fill="none" stroke="#7a5c4a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p>Asta anomala per una storica società abituata a non presentarsi mai con meno di mille milioni: stavolta arriva con meno soldi di tutti e pochissimi buchi da riempire. Investe convinto su Beto, Milla e Moreira; il resto sono tappabuchi e scommesse. Occhio a Ghedjemis, pagato due spicci: potrebbe essere la rivelazione del campionato. Il commento è lapidario come sempre: «Mi ha fatto invecchiare di 10 anni!».</p>
+        <div class="credit">Il Puma · Casa Martell · Tremulini</div>
+      </div>
+      <div class="sidepiece">
+        <div class="eyebrow">Il contenimento</div>
+        <h3>Il Biondo si contiene: transizione e una scommessa</h3>
+        <svg class="mug" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Il Biondo">
+          <rect width="60" height="60" fill="#2f2f36"/>
+          <path d="M8 60 q0-19 22-19 t22 19Z" fill="#c3b2a4"/>
+          <circle cx="30" cy="24" r="12.5" fill="#cdbcae"/>
+          <path d="M17 20 q1-13 13-13 t13 13 q-6-6-13-6 -7 0 -13 6Z" fill="#d9b24a"/>
+          <path d="M17 20 q-2 8 2 13 l2-11Z" fill="#d9b24a"/><path d="M43 20 q2 8 -2 13 l-2-11Z" fill="#d9b24a"/>
+          <g stroke="#c9a86a" stroke-width="1" opacity=".85"><circle cx="48" cy="11" r="2.6" fill="none"/><path d="M48 5.5 v-2 M48 18.5 v-2 M42.5 11 h-2 M53.5 11 h2 M44 7 l-1.4-1.4 M52 7 l1.4-1.4 M44 15 l-1.4 1.4 M52 15 l1.4 1.4"/></g>
+          <circle cx="25" cy="25" r="1.7" fill="#1c1410"/><circle cx="35" cy="25" r="1.7" fill="#1c1410"/>
+          <path d="M25 32 q5 2 10 0" fill="none" stroke="#7a5c4a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p>Asta di contenimento: divide il budget per coprire i tantissimi buchi in rosa. Sistema la porta con Vicario, rinforza il centrocampo con tre mediani e Kessie, e in avanti va low cost sulle punte centrali di Monza e Frosinone. La scommessa vera sono i 230 milioni per Alajbegovic: nuovo Yildiz o nuovo Torje? Alla domanda se fosse soddisfatto, risponde criptico: «Non confermo né smentisco! Verso la fine dell'asta ho iniziato a capire cosa stava succedendo. È un anno di transizione, puntiamo a tornare competitivi nel 2027/2028».</p>
+        <div class="credit">Il Biondo · Casa Targaryen · Montagnola</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGELLE -->
+  <div class="pagelle">
+    <div class="ph">Le pagelle delle Casate</div>
+    <div class="psub">i voti dell'asta · senza pietà</div>
+    <div class="pgrid">
+      <div class="card" style="--chip:#4a7ba0"><div class="hn">Estranei</div><div class="tn">Freddo <span class="vt">8</span></div><p>All-in su Chalobah, Molina e Kolo Muani, poi solo briciole (ottime). «Ho scelto con cura gli avanzi»: coraggio da vendere, panchina da inventare.</p></div>
+      <div class="card" style="--chip:#93142a"><div class="hn">Lannister</div><div class="tn">San Isidro <span class="vt">7,5</span></div><p>Sbarca lo sceicco: Ramos, Cissè, Mastantuono e un tesoretto ancora in cassa. Va fiero di Lulli, «il nuovo Cafù» che ieri non conosceva. Un Lannister paga sempre i suoi debiti.</p></div>
+      <div class="card" style="--chip:#b8912f"><div class="hn">Baratheon</div><div class="tn">Bonumusai <span class="vt">7,5</span></div><p>Tira i prezzi «pure a Maria Vergine» e porta a casa Mora. Pivello davanti al Freddo, gigante contro tutti gli altri. Nostra furia, loro paura.</p></div>
+      <div class="card" style="--chip:#256b3a"><div class="hn">Tyrell</div><div class="tn">Barone <span class="vt">7</span></div><p>Pochi soldi, tante lacrime: piange pure il panettiere. Ma Woltemade lo rimette in corsa e resta il primo sfidante. Crescono forti, di polemiche.</p></div>
+      <div class="card" style="--chip:#3a3a42"><div class="hn">Targaryen</div><div class="tn">Biondo <span class="vt">6,5</span></div><p>Asta di contenimento: Vicario, tre mediani e Kessie per tappare i buchi. La scommessa vera è Alajbegovic — nuovo Yildiz o nuovo Torje? «Anno di transizione.»</p></div>
+      <div class="card" style="--chip:#8a6a24"><div class="hn">Dothraki</div><div class="tn">Profeta <span class="vt">6,5</span></div><p>Poteva non presentarsi e comandava lo stesso. Sfrattato in macchina, si compra gli esterni dell'Inter e infastidisce. Manca solo il grande colpo.</p></div>
+      <div class="card" style="--chip:#d1621f"><div class="hn">Martell</div><div class="tn">Puma <span class="vt">6</span></div><p>Meno soldi di tutti e pochi buchi: asta anomala per chi non scendeva mai sotto i mille. Beto, Milla, Moreira e la scommessa Ghedjemis. «Invecchiato di 10 anni.»</p></div>
+      <div class="card" style="--chip:#70707a"><div class="hn">Stark</div><div class="tn">Manculicani <span class="vt">5,5</span></div><p>Un'ora per il primo rilancio, poi tappa i buchi con Stones e uomini funzionali. Tutto su Seba Esposito e sul mercato di gennaio, da chip leader. «Speriamo di avere ragione.»</p></div>
+    </div>
+  </div>
+
+  <div class="footer">Il martello è caduto: ora parli il campo — e in vetta, sempre lui, il <span>Profeta</span>.</div>
+</div>
+
+</body></html>
