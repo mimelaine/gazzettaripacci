@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gazzettaripacci · N.4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600;700&family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ecdb;
+    --paper2:#efe5cf;
+    --ink:#18130d;
+    --red:#b3121b;
+    --gold:#b0872b;
+    --gold-soft:#e9d9a6;
+    --rule:rgba(24,19,13,.18);
+    --rule-strong:rgba(24,19,13,.55);
+    --muted:#6d6252;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#2a2620;
+    color:var(--ink);
+    font-family:'Spectral',Georgia,serif;
+    padding:24px 12px 60px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .paper{
+    max-width:1080px;
+    margin:0 auto;
+    background:var(--paper);
+    background-image:
+      radial-gradient(rgba(0,0,0,.02) 1px, transparent 1px);
+    background-size:3px 3px;
+    padding:26px 30px 40px;
+    box-shadow:0 18px 50px rgba(0,0,0,.45);
+    border:1px solid rgba(0,0,0,.2);
+  }
+
+  /* ---------- Top strip ---------- */
+  .toprow{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:7px;
+  }
+  .toprow .red{color:var(--red);font-weight:600;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{padding:8px 0 4px;text-align:center;}
+  .masthead svg{width:100%;height:auto;display:block;}
+  .mast-fill{fill:var(--red);}
+  .mast-sub{
+    font-family:'Cinzel',serif;font-weight:700;
+    letter-spacing:.42em;text-transform:uppercase;
+    font-size:12px;color:var(--ink);
+    padding-left:.42em;
+    margin-top:2px;
+  }
+  .rule-fat{
+    border:none;border-top:3px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    height:4px;margin:10px 0 0;
+  }
+  .editionbar{
+    display:flex;justify-content:center;gap:22px;flex-wrap:wrap;
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink);
+    padding:9px 0 4px;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:20px;
+  }
+  .editionbar b{color:var(--red);font-weight:700;}
+
+  /* ---------- Headlines ---------- */
+  .occhiello{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--red);margin-bottom:6px;
+  }
+  h1.apertura{
+    font-family:'Anton',sans-serif;font-weight:400;
+    line-height:.94;letter-spacing:.005em;
+    text-transform:uppercase;
+    font-size:clamp(38px,7.4vw,74px);
+    margin:0 0 10px;color:var(--ink);
+  }
+  .sommario{
+    font-family:'Spectral',serif;font-style:italic;font-weight:600;
+    font-size:clamp(16px,2.1vw,20px);line-height:1.35;
+    color:#2c241a;
+    border-left:3px solid var(--red);padding-left:14px;
+    margin:0 0 18px;
+  }
+
+  /* ---------- Apertura layout ---------- */
+  .apertura-wrap{
+    display:grid;grid-template-columns:2fr 1fr;gap:26px;
+    padding-bottom:22px;border-bottom:2px solid var(--ink);
+    margin-bottom:22px;
+  }
+  .apertura-body{
+    column-count:2;column-gap:24px;
+    font-size:15px;line-height:1.6;text-align:justify;
+    hyphens:auto;
+  }
+  .apertura-body p{margin:0 0 12px;}
+  .apertura-body p:first-child::first-letter{
+    font-family:'Anton',sans-serif;float:left;
+    font-size:56px;line-height:.78;padding:4px 8px 0 0;color:var(--red);
+  }
+
+  /* ---------- Supercoppa gold box ---------- */
+  .coppa{
+    background:linear-gradient(155deg,#f6ecc7,#e6cf8f);
+    border:2px solid var(--gold);
+    padding:18px 16px 20px;text-align:center;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);
+    align-self:start;
+  }
+  .coppa .label{
+    font-family:'Cinzel',serif;font-weight:700;
+    font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:#7a5c15;
+  }
+  .coppa .trophy{font-size:52px;line-height:1;margin:8px 0 4px;}
+  .coppa .winner{
+    font-family:'Anton',sans-serif;text-transform:uppercase;
+    font-size:30px;line-height:1;color:#5c4310;margin:4px 0 8px;
+  }
+  .coppa .score{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:22px;color:var(--ink);
+  }
+  .coppa .score small{
+    display:block;font-weight:400;font-size:12px;letter-spacing:.05em;
+    color:#7a5c15;margin-top:2px;text-transform:uppercase;
+  }
+  .coppa .albo{
+    font-family:'Spectral',serif;font-style:italic;font-size:12.5px;
+    color:#6a5015;border-top:1px solid var(--gold);
+    margin-top:14px;padding-top:10px;
+  }
+
+  /* ---------- Match columns ---------- */
+  .cols3{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-bottom:2px solid var(--ink);margin-bottom:22px;
+  }
+  .col{padding:0 20px 20px;border-right:1px solid var(--rule);}
+  .col:first-child{padding-left:0;}
+  .col:last-child{padding-right:0;border-right:none;}
+
+  .score-strip{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:7px 0;margin-bottom:12px;
+  }
+  .score-strip .tm{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;
+    text-transform:uppercase;letter-spacing:.03em;flex:1;
+  }
+  .score-strip .tm.r{text-align:right;}
+  .score-strip .res{
+    font-family:'Anton',sans-serif;font-size:22px;color:var(--red);
+    white-space:nowrap;
+  }
+  .fanta{
+    font-family:'Oswald',sans-serif;font-size:10.5px;letter-spacing:.05em;
+    color:var(--muted);text-align:center;text-transform:uppercase;
+    margin:-8px 0 12px;
+  }
+  h2.subhead{
+    font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+    line-height:.98;font-size:clamp(20px,2.6vw,26px);
+    margin:0 0 4px;
+  }
+  .occh-sm{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:10.5px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--red);
+    margin-bottom:8px;
+  }
+  .col p{font-size:13.5px;line-height:1.55;text-align:justify;margin:0 0 10px;hyphens:auto;}
+  .mini-div{border:none;border-top:1px solid var(--rule);margin:16px 0 12px;}
+
+  /* ---------- Bottom: classifica + pagelle ---------- */
+  .bottom{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;}
+  .block-title{
+    font-family:'Anton',sans-serif;text-transform:uppercase;
+    font-size:22px;color:var(--ink);
+    border-bottom:3px solid var(--red);padding-bottom:5px;margin:0 0 12px;
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .block-title span{
+    font-family:'Oswald',sans-serif;font-weight:500;font-size:11px;
+    letter-spacing:.1em;color:var(--muted);
+  }
+  table{width:100%;border-collapse:collapse;font-family:'Oswald',sans-serif;}
+  thead th{
+    font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:6px 4px;text-align:center;
+  }
+  thead th.team{text-align:left;padding-left:8px;}
+  tbody td{
+    font-size:13px;padding:6px 4px;text-align:center;
+    border-bottom:1px solid var(--rule);color:#3a3225;
+  }
+  tbody td.pos{font-weight:700;color:var(--red);width:22px;}
+  tbody td.team{text-align:left;font-weight:600;color:var(--ink);padding-left:8px;}
+  tbody td.pt{font-weight:700;color:var(--ink);}
+  tbody td.tot{font-weight:700;}
+  tbody tr.me{background:var(--gold-soft);}
+  tbody tr.me td.team{color:#6a5015;}
+  .tot-up{color:#1f7a34;}
+  .tot-down{color:var(--red);}
+
+  .pagelle .row{
+    display:flex;align-items:baseline;gap:10px;
+    padding:8px 0;border-bottom:1px dotted var(--rule);
+  }
+  .pagelle .voto{
+    font-family:'Anton',sans-serif;font-size:24px;line-height:1;
+    color:var(--red);min-width:42px;text-align:center;
+  }
+  .pagelle .nome{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    text-transform:uppercase;min-width:96px;
+  }
+  .pagelle .txt{font-size:12.5px;line-height:1.4;color:#403626;font-style:italic;}
+
+  /* Top / Flop */
+  .tf-head{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:6px 0 4px;margin-top:6px;
+    border-bottom:2px solid var(--ink);
+  }
+  .tf-head.top{color:#1f7a34;}
+  .tf-head.flop{color:var(--red);margin-top:18px;}
+  .tf-row{
+    display:flex;align-items:baseline;gap:10px;
+    padding:9px 0;border-bottom:1px dotted var(--rule);
+  }
+  .tf-mark{
+    font-family:'Anton',sans-serif;font-size:20px;line-height:1;
+    min-width:26px;text-align:center;
+  }
+  .tf-row.top .tf-mark{color:#1f7a34;}
+  .tf-row.flop .tf-mark{color:var(--red);}
+  .tf-name{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:13.5px;
+    text-transform:uppercase;min-width:104px;line-height:1.1;
+  }
+  .tf-name small{display:block;font-weight:500;font-size:10px;color:var(--muted);letter-spacing:.04em;}
+  .tf-txt{font-size:12.5px;line-height:1.4;color:#403626;font-style:italic;}
+
+  .colophon{
+    margin-top:26px;border-top:2px solid var(--ink);padding-top:8px;
+    font-family:'Oswald',sans-serif;font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);text-align:center;
+  }
+  .colophon b{color:var(--red);}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:760px){
+    body{padding:12px 6px 40px;}
+    .paper{padding:18px 16px 28px;}
+    .apertura-wrap{grid-template-columns:1fr;gap:18px;}
+    .apertura-body{column-count:1;}
+    .cols3{grid-template-columns:1fr;}
+    .col{padding:0 0 18px;border-right:none;border-bottom:1px solid var(--rule);margin-bottom:18px;}
+    .col:last-child{border-bottom:none;}
+    .bottom{grid-template-columns:1fr;gap:26px;}
+    .editionbar{gap:12px;font-size:10.5px;}
+    .toprow{font-size:9.5px;letter-spacing:.08em;}
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <div class="toprow">
+    <span>Anno XXIII · N. 4</span>
+    <span class="red">Edizione Post-Asta</span>
+    <span>Prezzo: Gratis (come sempre)</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <svg id="mast" viewBox="0 0 1000 150" preserveAspectRatio="xMidYMid meet" aria-label="Gazzettaripacci">
+      <text id="masttext" x="0" y="120" class="mast-fill"
+            font-family="Anton, sans-serif" font-size="150">GAZZETTARIPACCI</text>
+    </svg>
+    <div class="mast-sub">Il quotidiano ufficiale della Legaripacci</div>
+    <hr class="rule-fat">
+  </div>
+
+  <div class="editionbar">
+    <span>Roma · Settembre 2026</span>
+    <span>3ª Giornata · <b>Serie A</b></span>
+    <span>Supercoppa · <b>La Finale</b></span>
+  </div>
+
+  <!-- APERTURA -->
+  <div class="apertura-wrap">
+    <div>
+      <div class="occhiello">Supercopparipacci 2026/27 · La finale</div>
+      <h1 class="apertura">Il Profeta è di parola: sua la Supercoppa</h1>
+      <p class="sommario">Battuto il Barone 3-2 (80.5 a 75) in una sfida che valeva doppio, titolo e 3ª di campionato. Primo trofeo stagionale, esattamente come da pronostico.</p>
+      <div class="apertura-body">
+        <p>Il Barone non era sceso in campo per fare da comparsa. Parte fortissimo, mette la testa avanti con i gol di Paz e Baturina e per un tempo accarezza l'idea della sorpresa. Ma il Profeta è il Profeta: risponde colpo su colpo con la doppietta di Diao e poi tira fuori l'arma più letale del suo arsenale, la ormai celebre allergia dei suoi giocatori a qualsiasi voto sotto il 6.5.</p>
+        <p>Finisce 3-2, 80.5 contro 75, e la coppa prende la strada già scritta sul copione. Il Barone esce a testa altissima, avendole provate davvero tutte; il Profeta si limita, con una scrollata di spalle, a incamerare il primo trofeo dell'annata.</p>
+        <p>Il dato che spaventa la Lega è un altro: terza giornata consecutiva sopra quota 80 fantapunti. La SNAI ha di fatto smesso di quotare l'over e ora offre cifre da capogiro a chi scommette che il Profeta scenda sotto la soglia prima del girone di ritorno. Gli altri sette prendono appunti. E aspirina.</p>
+      </div>
+    </div>
+
+    <aside class="coppa">
+      <div class="label">Albo d'Oro</div>
+      <div class="trophy">🏆</div>
+      <div class="winner">Il Profeta</div>
+      <div class="score">3 – 2 <small>80.5 – 75 · su Il Barone</small></div>
+      <div class="albo">Supercopparipacci 2026/27<br>Il primo sigillo di una stagione annunciata.</div>
+    </aside>
+  </div>
+
+  <!-- MATCH COLUMNS -->
+  <div class="cols3">
+
+    <div class="col">
+      <div class="score-strip">
+        <span class="tm">Manculicani</span>
+        <span class="res">0–3</span>
+        <span class="tm r">Biondo</span>
+      </div>
+      <div class="fanta">64.5 &nbsp;·&nbsp; 83</div>
+      <div class="occh-sm">Il poker sfiorato per un pelo</div>
+      <h2 class="subhead">Il Biondo si sveglia: 83 e record</h2>
+      <p>Primi tre punti in campionato per il Biondo, e che tre punti. 83 fantapunti, nuovo record stagionale della Lega, e un 3-0 che sa di manifesto programmatico.</p>
+      <p>Merito anche del mercato: Vicario che, a differenza del suo predecessore De Gea, non incassa quattro gol a partita, e soprattutto Raimondo, che all'esordio si presenta con una doppietta roboante. Dall'altra parte, Manculicani non pervenuto: forse un'asta troppo difensiva presenta il conto, e il tabellino si ferma a due assist con Valle e Kean.</p>
+      <p>Resurrezione o fuoco di paglia? Il Biondo giura la prima, i bookmaker aspettano di capire.</p>
+    </div>
+
+    <div class="col">
+      <div class="score-strip">
+        <span class="tm">San Isidro</span>
+        <span class="res">3–2</span>
+        <span class="tm r">Bonumusai</span>
+      </div>
+      <div class="fanta">79.5 &nbsp;·&nbsp; 72.5</div>
+      <div class="occh-sm">La prima volta non si scorda</div>
+      <h2 class="subhead">San Isidro scrive la storia</h2>
+      <p>Prima vittoria assoluta nella storia della Lega per San Isidro: un 3-2 di forza e di carattere che schianta un Bonumusai tutt'altro che arrendevole.</p>
+      <p>Gli ospiti si erano affidati al loro leader Lautaro Martinez, autore di una splendida doppietta. Ma stavolta il mercato paga il conto giusto: il gol del neoacquisto Cissé vale i primi, storici tre punti. Si festeggia, e con pieno merito.</p>
+      <hr class="mini-div">
+      <div class="score-strip">
+        <span class="tm">Il Puma</span>
+        <span class="res">1–1</span>
+        <span class="tm r">Il Freddo</span>
+      </div>
+      <div class="fanta">68.5 &nbsp;·&nbsp; 69.5</div>
+      <h2 class="subhead" style="font-size:20px;">Puma e Freddo, un pari che non scalda</h2>
+      <p>Puro equilibrio e poche emozioni. Gli unici squilli portano la firma di Hojlund e Pellegrino, non abbastanza per sbloccare una sfida bloccata. A pagare il conto più salato è il Freddo, che manca l'aggancio e lascia partire la capolista verso la fuga annunciata.</p>
+    </div>
+
+    <div class="col">
+      <div class="occh-sm">Il retroscena · La soglia</div>
+      <h2 class="subhead">L'over 80 che terrorizza la Lega</h2>
+      <p>C'è un numero che aleggia su ogni chat, ogni formazione, ogni notte insonne della Legaripacci: ottanta. Il Profeta lo tocca da tre turni di fila, con una regolarità che ha smesso di sembrare fortuna e comincia a somigliare a un teorema.</p>
+      <p>La spiegazione, a sentire gli avversari, è sempre la stessa: i suoi giocatori sembrano fisicamente incapaci di scendere sotto il 6.5 in pagella. Un'allergia documentata, per ora senza cura.</p>
+      <p>Il resto del gruppo insegue a distanza di sicurezza. Freddo prova a tenere il passo ma inciampa sul pari; Barone e le altre sperano semplicemente che, prima o poi, la statistica presenti il conto anche ai profeti. Il girone di ritorno dirà se è utopia o profezia.</p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="bottom">
+
+    <div>
+      <div class="block-title">Classifica <span>Campionato 2026-27 · dopo 3 giornate</span></div>
+      <table>
+        <thead>
+          <tr>
+            <th></th><th class="team">Squadra</th>
+            <th>G</th><th>V</th><th>N</th><th>P</th>
+            <th>Gf</th><th>Gs</th><th>Pt</th><th>Tot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pos">1</td><td class="team">Il Profeta</td><td>3</td><td>3</td><td>0</td><td>0</td><td>10</td><td>6</td><td class="pt">9</td><td class="tot tot-up">243.5</td></tr>
+          <tr><td class="pos">2</td><td class="team">Il Freddo</td><td>3</td><td>2</td><td>1</td><td>0</td><td>4</td><td>2</td><td class="pt">7</td><td class="tot">210</td></tr>
+          <tr><td class="pos">3</td><td class="team">Il Barone</td><td>3</td><td>1</td><td>1</td><td>1</td><td>6</td><td>6</td><td class="pt">4</td><td class="tot">219.5</td></tr>
+          <tr><td class="pos">4</td><td class="team">Fc Bonumusai</td><td>3</td><td>1</td><td>1</td><td>1</td><td>5</td><td>4</td><td class="pt">4</td><td class="tot">215.5</td></tr>
+          <tr><td class="pos">5</td><td class="team">San Isidro FC</td><td>3</td><td>1</td><td>0</td><td>2</td><td>6</td><td>7</td><td class="pt">3</td><td class="tot">219.5</td></tr>
+          <tr class="me"><td class="pos">6</td><td class="team">Biondo</td><td>3</td><td>1</td><td>0</td><td>2</td><td>4</td><td>5</td><td class="pt">3</td><td class="tot">219</td></tr>
+          <tr><td class="pos">7</td><td class="team">Il Puma</td><td>3</td><td>0</td><td>2</td><td>1</td><td>5</td><td>6</td><td class="pt">2</td><td class="tot">216.5</td></tr>
+          <tr><td class="pos">8</td><td class="team">AC Manculicani</td><td>3</td><td>0</td><td>1</td><td>2</td><td>1</td><td>5</td><td class="pt">1</td><td class="tot tot-down">199.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagelle">
+      <div class="block-title">Top &amp; Flop <span>La 3ª giornata</span></div>
+
+      <div class="tf-head top">I Top</div>
+      <div class="tf-row top"><div class="tf-mark">▲</div><div class="tf-name">Raimondo <small>Biondo</small></div><div class="tf-txt">Esordio da sogno: doppietta decisiva che lancia il Biondo verso l'83 e il record.</div></div>
+      <div class="tf-row top"><div class="tf-mark">▲</div><div class="tf-name">Diao <small>Il Profeta</small></div><div class="tf-txt">Doppietta pesantissima: rimonta il Barone e mette la Supercoppa sui binari giusti.</div></div>
+      <div class="tf-row top"><div class="tf-mark">▲</div><div class="tf-name">Cissé <small>San Isidro</small></div><div class="tf-txt">Il neoacquisto firma il gol vittoria: primi tre punti nella storia della Lega.</div></div>
+
+      <div class="tf-head flop">I Flop</div>
+      <div class="tf-row flop"><div class="tf-mark">▼</div><div class="tf-name">Ostigard <small>Il Freddo</small></div><div class="tf-txt">Un 4.5 che manda in fumo la vittoria: il Freddo si deve accontentare del pari.</div></div>
+      <div class="tf-row flop"><div class="tf-mark">▼</div><div class="tf-name">Il Puma <small>Allenatore</small></div><div class="tf-txt">Lascia in panchina un Frattesi on fire. Scelta che pesa quanto un rigore sbagliato.</div></div>
+    </div>
+
+  </div>
+
+  <div class="colophon">
+    Gazzettaripacci · Direttore responsabile <b>Il Biondo</b> · Ogni riferimento a fatti e persone è del tutto voluto
+  </div>
+
+</div>
+
+<script>
+  // Masthead: dynamic viewBox via getBBox to avoid iOS Safari text clipping
+  function fitMasthead(){
+    var svg = document.getElementById('mast');
+    var txt = document.getElementById('masttext');
+    if(!svg || !txt) return;
+    try{
+      var bb = txt.getBBox();
+      var padX = bb.height * 0.06;
+      var padY = bb.height * 0.14;
+      svg.setAttribute('viewBox',
+        (bb.x - padX) + ' ' + (bb.y - padY) + ' ' +
+        (bb.width + padX*2) + ' ' + (bb.height + padY*2));
+    }catch(e){}
+  }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(fitMasthead);
+  }
+  window.addEventListener('load', fitMasthead);
+  window.addEventListener('resize', fitMasthead);
+  setTimeout(fitMasthead, 300);
+  setTimeout(fitMasthead, 1200);
+</script>
+</body>
+</html>
