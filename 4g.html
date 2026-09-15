@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gazzettaripacci — N.5 — 4ª Giornata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211c16;
+    --ink-soft:#4a4239;
+    --red:#8f1d1a;
+    --red-deep:#6d1512;
+    --gold:#b5892b;
+    --gold-deep:#8a6414;
+    --paper:#f3ecdc;
+    --paper-2:#efe6d2;
+    --line:#c8bda2;
+    --line-soft:#d8cfb8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(circle at 20% 10%, rgba(181,137,43,.05), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(143,29,26,.05), transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Spectral',Georgia,serif;
+    line-height:1.5;
+    padding:24px 14px 56px;
+  }
+  .sheet{
+    max-width:940px;margin:0 auto;
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(33,28,22,.014) 0 2px, transparent 2px 4px);
+    border:1px solid var(--line);
+    box-shadow:0 2px 0 var(--line), 0 18px 40px -22px rgba(33,28,22,.55);
+    padding:26px 30px 34px;
+  }
+  @media(max-width:560px){ .sheet{padding:20px 16px 26px;} body{padding:12px 6px 40px;} }
+
+  /* ---------- MASTHEAD ---------- */
+  .brow{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--red-deep);
+    border-bottom:1px solid var(--ink);padding-bottom:6px;
+  }
+  .brow .mid{color:var(--ink-soft);letter-spacing:.22em;}
+  .masthead{
+    text-align:center;
+    border-bottom:4px double var(--ink);
+    padding:8px 0 10px;margin-bottom:2px;
+  }
+  .masthead h1{
+    font-family:'Anton',sans-serif;font-weight:400;
+    margin:2px 0 0;
+    font-size:clamp(44px,10.5vw,104px);
+    line-height:.86;letter-spacing:.005em;
+    color:var(--ink);
+    text-shadow:1px 1px 0 rgba(181,137,43,.28);
+  }
+  .tagline{
+    font-family:'Spectral',serif;font-style:italic;font-weight:500;
+    color:var(--red);font-size:clamp(12px,2.6vw,16px);margin-top:6px;
+  }
+  .subbar{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-soft);
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:5px 0;margin:8px 0 20px;
+  }
+  .subbar b{color:var(--red-deep);font-weight:600;}
+  .subbar .dot{color:var(--gold-deep);}
+
+  /* ---------- HERO ---------- */
+  .hero{ border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:20px; }
+  .kicker{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.16em;font-size:13px;
+    color:#fff;background:var(--red);display:inline-block;
+    padding:3px 12px;margin-bottom:8px;
+  }
+  .hero h2{
+    font-family:'Anton',sans-serif;font-weight:400;
+    font-size:clamp(34px,8vw,72px);line-height:.92;margin:6px 0 4px;
+    letter-spacing:.004em;text-transform:uppercase;
+  }
+  .hero h2 .hl{ color:var(--red-deep); }
+  .standfirst{
+    font-family:'Spectral',serif;font-style:italic;font-weight:500;
+    font-size:clamp(15px,3.2vw,20px);color:var(--ink-soft);
+    margin:10px 0 16px;max-width:62ch;
+  }
+  .hero-body{ columns:2;column-gap:30px;column-rule:1px solid var(--line-soft); }
+  @media(max-width:560px){ .hero-body{columns:1;} }
+  .hero-body p{margin:0 0 11px;font-size:15.5px;text-align:justify;hyphens:auto;}
+  .hero-body p:first-child::first-letter{
+    font-family:'Cinzel',serif;font-weight:800;
+    float:left;font-size:60px;line-height:.72;
+    padding:6px 8px 0 0;color:var(--red-deep);
+  }
+  .scoreflag{
+    display:inline-flex;align-items:baseline;gap:8px;
+    font-family:'Oswald',sans-serif;font-weight:700;
+    background:var(--ink);color:var(--paper);
+    padding:3px 12px;font-size:20px;letter-spacing:.04em;margin:0 0 12px;
+  }
+  .scoreflag small{font-weight:400;font-size:11px;letter-spacing:.1em;opacity:.8;}
+
+  /* ---------- SECTION LABELS ---------- */
+  .rule-label{
+    display:flex;align-items:center;gap:12px;margin:6px 0 14px;
+  }
+  .rule-label::before,.rule-label::after{content:"";flex:1;height:2px;background:var(--ink);}
+  .rule-label span{
+    font-family:'Cinzel',serif;font-weight:700;
+    text-transform:uppercase;letter-spacing:.14em;
+    font-size:15px;color:var(--ink);white-space:nowrap;
+  }
+
+  /* ---------- THREE COLUMN ---------- */
+  .grid3{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-bottom:26px; }
+  @media(max-width:720px){ .grid3{grid-template-columns:1fr;gap:16px;} }
+  .art h3{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:20px;line-height:1.05;margin:0 0 4px;text-transform:uppercase;
+    letter-spacing:.01em;
+  }
+  .art .mini{
+    font-family:'Oswald',sans-serif;font-weight:500;font-size:12px;
+    letter-spacing:.06em;color:var(--red-deep);text-transform:uppercase;
+    border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:8px;
+  }
+  .art p{margin:0 0 9px;font-size:14px;text-align:justify;hyphens:auto;color:var(--ink);}
+  .art .tag{font-family:'Spectral',serif;font-style:italic;color:var(--red);}
+
+  /* ---------- TOP & FLOP ---------- */
+  .tf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px;}
+  @media(max-width:640px){ .tf-wrap{grid-template-columns:1fr;} }
+  .tf{border:2px solid var(--ink);background:var(--paper-2);}
+  .tf .cap{
+    font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.05em;
+    color:var(--paper);padding:6px 14px;text-transform:uppercase;
+  }
+  .tf.top .cap{background:var(--gold-deep);}
+  .tf.flop .cap{background:var(--red-deep);}
+  .tf ul{list-style:none;margin:0;padding:12px 16px;}
+  .tf li{padding:9px 0;border-bottom:1px dashed var(--line);}
+  .tf li:last-child{border-bottom:none;}
+  .tf .who{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;
+    text-transform:uppercase;letter-spacing:.02em;display:block;
+  }
+  .tf.top .who{color:var(--gold-deep);}
+  .tf.flop .who{color:var(--red-deep);}
+  .tf .why{font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---------- RESULTS + STANDINGS ---------- */
+  .data-wrap{display:grid;grid-template-columns:0.9fr 1.4fr;gap:24px;margin-bottom:26px;}
+  @media(max-width:720px){ .data-wrap{grid-template-columns:1fr;} }
+  .box-title{
+    font-family:'Cinzel',serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:.1em;font-size:14px;background:var(--ink);color:var(--paper);
+    padding:6px 12px;
+  }
+  .res{border:1.5px solid var(--ink);}
+  .res .row{display:flex;align-items:center;justify-content:space-between;
+    padding:9px 12px;border-bottom:1px solid var(--line);font-size:13.5px;gap:8px;}
+  .res .row:last-child{border-bottom:none;}
+  .res .t{font-family:'Oswald',sans-serif;font-weight:500;flex:1;}
+  .res .t.away{text-align:right;}
+  .res .sc{font-family:'Oswald',sans-serif;font-weight:700;background:var(--ink);
+    color:var(--paper);padding:2px 9px;font-size:14px;white-space:nowrap;}
+  .res .pts{font-family:'Spectral',serif;font-style:italic;font-size:11px;
+    color:var(--ink-soft);text-align:center;padding-top:2px;}
+
+  table.cls{width:100%;border-collapse:collapse;border:1.5px solid var(--ink);font-family:'Oswald',sans-serif;}
+  table.cls th{
+    background:var(--ink);color:var(--paper);font-weight:500;
+    font-size:11px;letter-spacing:.04em;padding:7px 4px;text-transform:uppercase;
+  }
+  table.cls td{padding:7px 4px;font-size:13px;text-align:center;border-bottom:1px solid var(--line);}
+  table.cls td.pos{font-weight:700;color:var(--red-deep);width:24px;}
+  table.cls td.team{text-align:left;font-weight:600;color:var(--ink);white-space:nowrap;}
+  table.cls td.pt{font-weight:700;color:var(--ink);}
+  table.cls td.tot{font-family:'Spectral',serif;font-weight:600;}
+  table.cls tr:nth-child(even) td{background:rgba(33,28,22,.03);}
+  table.cls tr.leader td{background:rgba(181,137,43,.16);}
+  table.cls tr.last td.team{color:var(--red);}
+  .up{color:#2f7d32;font-weight:700;}
+  .down{color:var(--red);font-weight:700;}
+
+  /* ---------- PAGELLE DELLE CASATE ---------- */
+  .houses{border-top:4px double var(--ink);padding-top:16px;}
+  .house-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;}
+  @media(max-width:640px){ .house-grid{grid-template-columns:1fr;} }
+  .house{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-soft);}
+  .sig{width:40px;height:40px;flex:0 0 40px;}
+  .house .hn{font-family:'Cinzel',serif;font-weight:700;font-size:15px;letter-spacing:.03em;line-height:1.1;}
+  .house .hh{font-family:'Oswald',sans-serif;font-weight:500;font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--red-deep);margin-bottom:3px;}
+  .house .hd{font-size:13px;color:var(--ink-soft);}
+  .house .grade{font-family:'Anton',sans-serif;font-size:15px;color:var(--gold-deep);margin-left:4px;}
+
+  .colophon{
+    text-align:center;margin-top:22px;padding-top:12px;border-top:1px solid var(--ink);
+    font-family:'Spectral',serif;font-style:italic;font-size:12px;color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- MASTHEAD -->
+  <div class="brow">
+    <span>Anno XXIII · N.5</span>
+    <span class="mid">Edizione Nazionale · Legaripacci</span>
+    <span>Prezzo: un fantamilione</span>
+  </div>
+  <div class="masthead">
+    <h1>GAZZETTARIPACCI</h1>
+    <div class="tagline">«L'unico quotidiano che il Profeta legge piangendo»</div>
+  </div>
+  <div class="subbar">
+    <span><b>4ª Giornata</b></span><span class="dot">◆</span>
+    <span>Campionato 2026–2027</span><span class="dot">◆</span>
+    <span>Serie A</span><span class="dot">◆</span>
+    <span>Roma, 15 settembre 2026</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="kicker">La caduta del re</span>
+    <h2>IL NORD RICORDA:<br><span class="hl">MANCULICANI</span> STENDE IL PROFETA</h2>
+    <div class="standfirst">Muro invalicabile e contropiede letale: la prima sconfitta stagionale del capolista arriva dal gelo del settentrione. Finisce 3–1 e il khalasar torna a casa a piedi.</div>
+    <div class="scoreflag">IL PROFETA 1 &nbsp;–&nbsp; 3 AC MANCULICANI <small>70,5 · 81,5</small></div>
+    <div class="hero-body">
+      <p>Doveva essere l'ennesima passeggiata del capolista, si è trasformata nella sua prima notte da comune mortale. L'AC Manculicani costruisce l'impresa sulle fondamenta più antiche del calcio: una difesa che non prende schiaffi e tre giocatori che, per una sera, decidono di esistere tutti insieme.</p>
+      <p>Apre le danze Scamacca, prosegue Ekkelenkamp — ribattezzato dai maligni «il nuovo Riquelme» dopo un gol che ha il sapore della certezza — e chiude Kaiki, fino a ieri oggetto misterioso del mercato, oggi giustiziere. Al Profeta non basta il timbro del solito, inossidabile Malen: un gol per illudersi, tre subiti per ricordarsi che anche i profeti sbagliano previsione.</p>
+      <p>Contorno gustoso: i due allenatori si sono insultati per giorni con una dedizione che meriterebbe una menzione ai fantacalcistici. Alla fine ha parlato il campo, e il campo — dispettoso — ha dato ragione a chi urlava meno e marcava di più. Il silenzio, dopo il triplice fischio, valeva più di ogni messaggio vocale da tre minuti.</p>
+    </div>
+  </div>
+
+  <!-- ALTRE PARTITE -->
+  <div class="rule-label"><span>Le altre della giornata</span></div>
+  <div class="grid3">
+    <div class="art">
+      <div class="mini">Biondo 0 – 2 San Isidro · 65,5–74</div>
+      <h3>Fuoco di paglia, si spegne il Biondo</h3>
+      <p>Confermato l'exploit della scorsa giornata… al contrario. Il Biondo lascia in panchina gli unici che sanno dove sia la porta, sbaglia pure il portiere e raccoglie il risultato più coerente con le scelte: zero gol, zero appello.</p>
+      <p>San Isidro continua la rincorsa al Profeta al grido di <span class="tag">«magari te rompo er culo»</span>, cavalcando la serata magica di Mastantuono e la sua tripletta. Contro questa versione del Biondo ci si può perfino permettere di far riposare Thuram e Pisilli — quest'ultimo scoperto, con un certo imbarazzo, mai caricato in rosa.</p>
+    </div>
+    <div class="art">
+      <div class="mini">Bonumusai 1 – 1 Puma · 68,5–69,5</div>
+      <h3>Un punto in cassaforte: guai a prenderle</h3>
+      <p>Puma e Bonumusai si spartiscono un pareggio che a fine anno potrebbe valere oro. Più preoccupati di non prenderle che di darle, si affidano ai guizzi: Mangas e Zielinski da una parte, Ramon e Vasquez dall'altra, per una partita comunque frizzante.</p>
+      <p>Bonumusai resta appollaiato ai piedi del podio; il Puma prosegue imperterrito nella sua personale collezione di segni «X». Tre pareggi su quattro: manca solo il diploma da notaio.</p>
+    </div>
+    <div class="art">
+      <div class="mini">Freddo 1 – 2 Barone · 67,5–73</div>
+      <h3>Il latitante colpisce dalla panchina</h3>
+      <p>Prima sconfitta anche per il Freddo, agganciato al secondo posto dal Barone, ultimamente noto come «il latitante»: pare abbia scelto il silenzio stampa sul gruppo WhatsApp come unico metodo per arginare il pianto del Profeta.</p>
+      <p>Segnano Carlos Augusto e Barella, ma la firma pesante è quella di Adams, entrato dalla panchina per decidere tutto. <span class="tag">Visione tattica o sana botta di culo?</span> Chiedetelo a lui — se risponde.</p>
+    </div>
+  </div>
+
+  <!-- TOP & FLOP -->
+  <div class="rule-label"><span>Top & Flop di giornata</span></div>
+  <div class="tf-wrap">
+    <div class="tf top">
+      <div class="cap">★ I TOP</div>
+      <ul>
+        <li><span class="who">Mastantuono</span><span class="why">Tripletta e Biondo steso: da solo lo spedisce all'ultimo posto in classifica.</span></li>
+        <li><span class="who">Akor Adams</span><span class="why">Entra dalla panchina e decide la sfida in favore del Barone. Il subentro che vale il secondo posto.</span></li>
+        <li><span class="who">Ekkelenkamp</span><span class="why">Secondo gol in quattro partite per l'acquisto più discusso dell'estate: sta diventando una certezza.</span></li>
+      </ul>
+    </div>
+    <div class="tf flop">
+      <div class="cap">✖ I FLOP</div>
+      <ul>
+        <li><span class="who">Il Biondo (allenatore)</span><span class="why">Sbaglia tutto ciò che si può sbagliare: formazione, portiere, panchina. Manuale del disastro.</span></li>
+        <li><span class="who">Vasquez</span><span class="why">Ingenuità che gli costa il rosso e a Bonumusai costa la vittoria. Un'espulsione da album.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RISULTATI + CLASSIFICA -->
+  <div class="data-wrap">
+    <div>
+      <div class="box-title">Risultati · 4ª Giornata</div>
+      <div class="res">
+        <div class="row"><span class="t">Biondo</span><span class="sc">0 – 2</span><span class="t away">San Isidro FC</span></div>
+        <div class="pts">65,5 &nbsp;·&nbsp; 74</div>
+        <div class="row"><span class="t">Fc Bonumusai</span><span class="sc">1 – 1</span><span class="t away">Il Puma</span></div>
+        <div class="pts">68,5 &nbsp;·&nbsp; 69,5</div>
+        <div class="row"><span class="t">Il Freddo</span><span class="sc">1 – 2</span><span class="t away">Il Barone</span></div>
+        <div class="pts">67,5 &nbsp;·&nbsp; 73</div>
+        <div class="row"><span class="t">Il Profeta</span><span class="sc">1 – 3</span><span class="t away">AC Manculicani</span></div>
+        <div class="pts">70,5 &nbsp;·&nbsp; 81,5</div>
+      </div>
+    </div>
+    <div>
+      <div class="box-title">Classifica Generale</div>
+      <table class="cls">
+        <thead>
+          <tr><th></th><th style="text-align:left;padding-left:8px;">Squadra</th><th>G</th><th>V</th><th>N</th><th>P</th><th>Gf</th><th>Gs</th><th>Pt</th><th>Tot</th></tr>
+        </thead>
+        <tbody>
+          <tr class="leader"><td class="pos">1</td><td class="team">Il Profeta</td><td>4</td><td>3</td><td>0</td><td>1</td><td>11</td><td>9</td><td class="pt">9</td><td class="tot up">314</td></tr>
+          <tr><td class="pos">2</td><td class="team">Il Barone</td><td>4</td><td>2</td><td>1</td><td>1</td><td>8</td><td>7</td><td class="pt">7</td><td class="tot">292,5</td></tr>
+          <tr><td class="pos">3</td><td class="team">Il Freddo</td><td>4</td><td>2</td><td>1</td><td>1</td><td>5</td><td>4</td><td class="pt">7</td><td class="tot down">277,5</td></tr>
+          <tr><td class="pos">4</td><td class="team">San Isidro FC</td><td>4</td><td>2</td><td>0</td><td>2</td><td>8</td><td>7</td><td class="pt">6</td><td class="tot">293,5</td></tr>
+          <tr><td class="pos">5</td><td class="team">Fc Bonumusai</td><td>4</td><td>1</td><td>2</td><td>1</td><td>6</td><td>5</td><td class="pt">5</td><td class="tot">284</td></tr>
+          <tr><td class="pos">6</td><td class="team">AC Manculicani</td><td>4</td><td>1</td><td>1</td><td>2</td><td>4</td><td>6</td><td class="pt">4</td><td class="tot">281</td></tr>
+          <tr><td class="pos">7</td><td class="team">Il Puma</td><td>4</td><td>0</td><td>3</td><td>1</td><td>6</td><td>7</td><td class="pt">3</td><td class="tot">286</td></tr>
+          <tr class="last"><td class="pos">8</td><td class="team">Biondo</td><td>4</td><td>1</td><td>0</td><td>3</td><td>4</td><td>7</td><td class="pt">3</td><td class="tot">284,5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="colophon">
+    GAZZETTARIPACCI · Direttore irresponsabile: Il Biondo · Redazione fondata 23 stagioni fa e mai andata in prescrizione<br>
+    «Le pagelle non fanno prigionieri. I portieri sbagliati nemmeno.»
+  </div>
+
+</div>
+</body>
+</html>
